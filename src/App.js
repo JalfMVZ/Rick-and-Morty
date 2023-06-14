@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Cards from './components/Cards/Cards.jsx';
+import SearchBar from './components/SeachBar/SearchBar.jsx';
+import characters from './data.js';
+import background from "./components/backgrounds/wp3277694-rick-and-morty-4k-wallpapers.png";
+import lup from "../src/components/Icons/lupa.jsx"
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <div className='App'>
+         <SearchBar onSearch={(characterID) => window.alert(characterID)} />
+         <Cards characters={characters} />
+         
+      </div>
+   );
 }
 
 export default App;
