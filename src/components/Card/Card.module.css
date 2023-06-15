@@ -13,3 +13,11 @@
 .card_container:hover {
   scale: 1.2;
 }
+.btn{
+  color: red;
+  transition: .5s;
+  &:hover{
+    background-color: green;
+    transition: 3s;
+  }
+}

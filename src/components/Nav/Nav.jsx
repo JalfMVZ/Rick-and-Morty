@@ -1,8 +1,9 @@
 import React from 'react'
-import style from '../Nav/Nav.module.css'
+import SearchBar from '../SeachBar/SearchBar'
 
-export default function Nav() {
+
+export default function Nav({onSearch}) {
   return (
-    <div>Nav</div>
+    <SearchBar onSearch={onSearch}/>
   )
 }

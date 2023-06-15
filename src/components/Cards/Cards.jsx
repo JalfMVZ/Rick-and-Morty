@@ -3,7 +3,7 @@ import style from "./Cards.module.css"
 
 export default function Cards(props) {
   // Define una función de componente llamada Cards que recibe props como argumento
-  const { characters } = props; // Extrae la propiedad characters de las props recibidas y guárdala en la variable characters
+  const { characters, onClose } = props; // Extrae la propiedad characters de las props recibidas y guárdala en la variable characters
 
   return (
     <div className={style.cards_container}>
@@ -13,13 +13,14 @@ export default function Cards(props) {
         ) => (
           <Card
             key={character.id}
+            id = {character.id}
             name={character.name} 
             status={character.status} 
             species={character.species} 
             gender={character.gender} 
             origin={character.origin.name} 
             image={character.image} 
-            onClose={() => window.alert("Emulamos que se cierra la card")} 
+            onClose={onClose} 
           />
         )
       )}
