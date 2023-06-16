@@ -16,11 +16,8 @@
 }
 .btn{
   color: red;
-  transition: .5s;
-  &:hover{
-    background-color: green;
-    transition: 3s;
-  }
+  
+  
 }
 
 .nav_color{

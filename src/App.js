@@ -6,6 +6,9 @@ import axios from 'axios'
 import { Routes, Route } from 'react-router-dom';
 import About from './components/About/About.jsx'
 import Detail from './components/Detail/Detail';
+import { useLocation } from 'react-router-dom';
+import Form from './components/Form/form.jsx';
+
 
 // const example = {
 //    id: 1,
@@ -21,6 +24,9 @@ import Detail from './components/Detail/Detail';
 // };
 
 function App() {
+
+   const locate = useLocation()
+
    const [characters, setCharacters] = useState([])
    const onClose = (id) => {
       const charactersFiltered = characters.filter(character => character.id !== Number(id))
@@ -40,8 +46,14 @@ function App() {
    return (
       <div className='App'>
          
-         <Nav onSearch={onSearch} />
+         
+         
+         {locate.pathname  !== "/" &&  <Nav onSearch={onSearch} /> }
+         {/* {locate.pathname  !== "/" ?  <Nav onSearch={onSearch} /> : null} */}
+
          <Routes>
+            <Route path='/' element={<Form/>}/>
+
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/> 
                
             
@@ -52,7 +64,7 @@ function App() {
 
          </Routes>
 
-
+         
 
 
       </div >
