@@ -24,7 +24,7 @@ export default function SearchBar({ onSearch }) {
         onChange={handleChange}
         value={id}
       />
-      <label>Escribe Aqui</label>
+      
       <button onClick={add}>Agregar</button>
       <button onClick={apr}>Random</button>
     </div>
