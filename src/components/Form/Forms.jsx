@@ -26,12 +26,12 @@ export default function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const updatedErrors = Validation(userData); 
+    const updatedErrors = Validation(userData);
 
     if (Object.keys(updatedErrors).length === 0) {
       navigate("/home");
     } else {
-      setErrors(updatedErrors); 
+      setErrors(updatedErrors);
     }
   };
 
@@ -63,8 +63,10 @@ export default function Form() {
               onChange={handleChange}
               onFocus={handleEmailFocus}
               onBlur={handleEmailBlur}
+              autoComplete="off"
               required
             />
+
             <label htmlFor="email">
               {errors.email ? errors.email : "Username"}
             </label>
