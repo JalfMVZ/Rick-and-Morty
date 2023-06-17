@@ -3,10 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function Detail() {
-  const [character, setCharacter] = useState({});
 
+export default function Detail() {
   const { id } = useParams();
+  const [character, setCharacter] = useState({});
 
   useEffect(() => {
     axios(`https://rickandmortyapi.com/api/character/${id}`).then(
@@ -20,24 +20,19 @@ export default function Detail() {
     );
     return setCharacter({});
   }, [id]);
+
   return (
-    <div>
-      {character.name ? <h1>{character.name}</h1> : null}
-      {character.status ? <h2>{character.status}</h2> : null}
-      {character.species ? <h2>{character.species}</h2> : null}
-      {character.gender ? <h2>{character.gender}</h2> : null}
-      {character.origin ? <h2>{character.origin.name}</h2> : null}
-      {character.image ? <img src={character.image} alt={character?.name} /> : null}
+    <div className = 'DetailPadre'>
+      <div className="Detail">
+        <img src={character?.image} alt="" className="Img" />
+        <div className="CartaDetail">
+          <h2 className="Name">{character?.name}</h2>
+          <h2 className="Data">Status: {character?.status}</h2>
+          <h2 className="Data">Species: {character?.species}</h2>
+          <h2 className="Data">Gender: {character?.gender}</h2>
+          <h2 className="Data">Origin: {character?.origin?.name}</h2>
+        </div>
+      </div>
     </div>
   );
-// return(
-//     <div>  
-//         <h1>{character?.name}</h1>
-//         <h2>{character?.status}</h2>
-//         <h2>{character?.species}</h2>
-//         <h2>{character?.gender}</h2>
-//         <h2>{character?.origin?.name}</h2>
-//         <img src={character?.image} alt={character?.name} />
-//     </div>
-// )
 }

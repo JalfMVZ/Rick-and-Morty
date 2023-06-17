@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Validation from "./validation";
+import Validations from "./Validations";
 
 export default function Form() {
   const [userData, setUserData] = useState({
@@ -13,7 +13,7 @@ export default function Form() {
     password: "",
   });
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   function handleChange(event) {
     setUserData({
@@ -25,12 +25,10 @@ export default function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const updatedErrors = { ...errors };
-    Validation(userData, updatedErrors);
+    Validations(userData, updatedErrors);
     setErrors(updatedErrors);
 
-    
     if (!updatedErrors.email && !updatedErrors.password) {
-    
       navigate("/home");
     }
   };
@@ -59,11 +57,10 @@ export default function Form() {
       <hr />
       {errors.email || errors.password ? (
         <div>
-          <p>Please fix the following errors:</p>
-          {errors.email && <p>{errors.email}</p>}
-          {errors.password && <p>{errors.password}</p>}
+          {}
+          {}
         </div>
-      ) : null}                                                                                                     
+      ) : null}
       <button type="submit" disabled={errors.email || errors.password}>
         Submit
       </button>

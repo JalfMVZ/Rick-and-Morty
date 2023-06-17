@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import About from './components/About/About.jsx'
 import Detail from './components/Detail/Detail';
 import { useLocation } from 'react-router-dom';
-import Form from './components/Form/form.jsx';
+import Form from './components/Form/Forms.jsx';
 
 
 // const example = {

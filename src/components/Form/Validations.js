@@ -1,8 +1,6 @@
-import React from "react";
-
 export default function Validation(userData, errors) {
-  errors.email = ""; 
-  errors.password = ""; 
+  errors.email = "";
+  errors.password = "";
 
   if (!userData.email) {
     errors.email = "Ingresa el correo electrónico";
@@ -20,4 +18,3 @@ export default function Validation(userData, errors) {
     errors.password = "La contraseña debe tener entre 6 y 10 caracteres";
   }
 }
-
