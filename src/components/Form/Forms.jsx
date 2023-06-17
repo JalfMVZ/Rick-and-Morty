@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Validations from "./Validations";
-import style from './Forms.module.css';
+import { useNavigate } from "react-router-dom";
+import Validation from "./Validations";
+import style from "./Forms.module.css";
 
 export default function Form() {
   const [userData, setUserData] = useState({
@@ -9,10 +9,10 @@ export default function Form() {
     password: "",
   });
 
-  const [errors, setErrors] = useState({
-    email: "",
-    password: "",
-  });
+  const [errors, setErrors] = useState({});
+
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
 
   const navigate = useNavigate();
 
@@ -25,13 +25,30 @@ export default function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const updatedErrors = { ...errors };
-    Validations(userData, updatedErrors);
-    setErrors(updatedErrors);
 
-    if (!updatedErrors.email && !updatedErrors.password) {
+    const updatedErrors = Validation(userData); 
+
+    if (Object.keys(updatedErrors).length === 0) {
       navigate("/home");
+    } else {
+      setErrors(updatedErrors); 
     }
+  };
+
+  const handleEmailFocus = () => {
+    setIsEmailFocused(true);
+  };
+
+  const handleEmailBlur = () => {
+    setIsEmailFocused(false);
+  };
+
+  const handlePasswordFocus = () => {
+    setIsPasswordFocused(true);
+  };
+
+  const handlePasswordBlur = () => {
+    setIsPasswordFocused(false);
   };
 
   return (
@@ -39,41 +56,37 @@ export default function Form() {
       <div className={style.form_card}>
         <form onSubmit={handleSubmit}>
           <div className={style.input_container}>
-            <label htmlFor="email" className={style.email_label}>
-              Email
-            </label>
             <input
-              type="email"
+              type="text"
               name="email"
               value={userData.email}
               onChange={handleChange}
-              className={style.input_field}
+              onFocus={handleEmailFocus}
+              onBlur={handleEmailBlur}
+              required
             />
+            <label htmlFor="email">
+              {errors.email ? errors.email : "Username"}
+            </label>
           </div>
-          <span>{errors.email && errors.email}</span>
 
           <div className={style.input_container}>
-            <label htmlFor="password" className={style.passw_label}>
-              Password
-            </label>
             <input
               type="password"
               name="password"
               value={userData.password}
               onChange={handleChange}
-              className={style.input_field}
+              onFocus={handlePasswordFocus}
+              onBlur={handlePasswordBlur}
+              required
             />
+            <label htmlFor="password">
+              {errors.password ? errors.password : "Password"}
+            </label>
           </div>
-          <span>{errors.password && errors.password}</span>
 
-          {errors.email || errors.password ? (
-            <div>
-              {}
-              {}
-            </div>
-          ) : null}
-          <button className={style.btn_submit} type="submit" disabled={errors.email || errors.password}>
-            Submit
+          <button className={style.btn_submit} type="submit">
+            Login
           </button>
         </form>
       </div>

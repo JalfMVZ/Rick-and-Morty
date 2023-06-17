@@ -1,6 +1,5 @@
-export default function Validation(userData, errors) {
-  errors.email = "";
-  errors.password = "";
+export default function Validation(userData) {
+  const errors = {};
 
   if (!userData.email) {
     errors.email = "Ingresa el correo electrónico";
@@ -17,4 +16,6 @@ export default function Validation(userData, errors) {
   } else if (userData.password.length < 6 || userData.password.length > 10) {
     errors.password = "La contraseña debe tener entre 6 y 10 caracteres";
   }
+
+  return errors;
 }
