@@ -1,7 +1,18 @@
-.cards_container{
+/* .cards_container{
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     gap: 2rem;
-    /* background: red; */
+    margin-top: 4rem;
+} */
+
+.cards_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    row-gap: 40px;
+    column-gap: 40px;
+    max-width: 1280px;
+    margin: 3rem auto;
 }
+
+

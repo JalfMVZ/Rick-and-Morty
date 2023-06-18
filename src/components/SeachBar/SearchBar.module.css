@@ -1,6 +1,8 @@
-.bar_style {
-    height: 30px;
-    width: 15px;
-    border-radius: 1.5rem;
+.bar_container{
+   padding: 10px;
+}
 
+
+.bar_search{
+   border-radius: 10%;
 }

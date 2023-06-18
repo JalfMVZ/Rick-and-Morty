@@ -52,6 +52,10 @@ export default function Form() {
   };
 
   return (
+
+    
+
+
     <div className={style.forms_container}>
       <div className={style.form_card}>
         <form onSubmit={handleSubmit}>
@@ -65,6 +69,7 @@ export default function Form() {
               onBlur={handleEmailBlur}
               autoComplete="off"
               required
+              className={style.imputglb}
             />
 
             <label htmlFor="email">
@@ -81,6 +86,7 @@ export default function Form() {
               onFocus={handlePasswordFocus}
               onBlur={handlePasswordBlur}
               required
+              className={style.imputglb}
             />
             <label htmlFor="password">
               {errors.password ? errors.password : "Password"}

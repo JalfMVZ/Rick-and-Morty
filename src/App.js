@@ -8,20 +8,12 @@ import About from './components/About/About.jsx'
 import Detail from './components/Detail/Detail';
 import { useLocation } from 'react-router-dom';
 import Form from './components/Form/Forms.jsx';
+import video from './components/img_vid/rym.mp4'
+// import { VideoBackground, Video } from './styled.components';
 
 
-// const example = {
-//    id: 1,
-//    name: 'Rick Sanchez',
-//    status: 'Alive',
-//    species: 'Human',
-//    gender: 'Male',
-//    origin: {
-//       name: 'Earth (C-137)',
-//       url: 'https://rickandmortyapi.com/api/location/1',
-//    },
-//    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-// };
+
+
 
 function App() {
 
@@ -45,26 +37,35 @@ function App() {
    }
    return (
       <div className='App'>
-         
-         
-         
-         {locate.pathname  !== "/" &&  <Nav onSearch={onSearch} /> }
+
+         {/* <VideoBackground>
+            <Video autoPlay muted loop className="videorym">
+               <source src={video} type='video/mp4' >
+                  
+               </source>
+            </Video>
+
+         </VideoBackground> */}
+
+
+
+         {locate.pathname !== "/" && <Nav onSearch={onSearch} />}
          {/* {locate.pathname  !== "/" ?  <Nav onSearch={onSearch} /> : null} */}
 
          <Routes>
-            <Route path='/' element={<Form/>}/>
+            <Route path='/' element={<Form />} />
 
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/> 
-               
-            
-            <Route path='/about' element={<About/>}/>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
 
-            
-            <Route path='/detail/:id' element={<Detail/>}/>
+
+            <Route path='/about' element={<About />} />
+
+
+            <Route path='/detail/:id' element={<Detail />} />
 
          </Routes>
 
-         
+
 
 
       </div >

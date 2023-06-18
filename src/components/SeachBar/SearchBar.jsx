@@ -1,32 +1,34 @@
-import {useState} from 'react'
-import './SearchBar.module.css'
+import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faShuffle } from '@fortawesome/free-solid-svg-icons';
+import style from "../SeachBar/SearchBar.module.css";
 
-export default function SearchBar({onSearch}) {
-  const [id, setId] = useState('')
-  const handleChange = (event) => {
-    console.log('event --->', event.target.value)
-    setId(event.target.value)
-    // setId((id + 1))
-  };
+export default function SearchBar({ onSearch }) {
+  const [id, setId] = useState("");
+  function handleChange(event) {
+    setId(event.target.value);
+  }
   const add = () => {
-    onSearch(id)
-    setId('')
-  }
-  const randomChar = () => {
-    const numRan = Math.floor(Math.random() * 825) + 1;
-    onSearch(numRan)
-  }
+    onSearch(id);
+    setId("");
+  };
+  const apr = () => {
+    const pija = Math.floor(Math.random() * 825) + 1;
+    onSearch(pija);
+  };
+
   return (
-    <div className = 'search'>
-      <label>Insert Id  </label>
-      <input 
-      type = 'search' 
-      onChange = {handleChange} 
-      value = {id} 
-      name = 'id' 
-      placeholder = 'insert id ...'/>
-      <button onClick={add}>Add</button> 
-      <button onClick={randomChar}>Random Character</button> 
+    <div className={style.bar_container}>
+      <input
+         className={style.bar_search}
+        type="search"
+        name="id"
+        placeholder="Insert ID..."
+        onChange={handleChange}
+        value={id}
+      />
+      <FontAwesomeIcon icon={faMagnifyingGlass} onClick={add}>Agregar</FontAwesomeIcon>
+      <FontAwesomeIcon icon={faShuffle} onClick={apr}>Random</FontAwesomeIcon>
     </div>
   );
 }
