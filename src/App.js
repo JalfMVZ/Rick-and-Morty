@@ -8,8 +8,7 @@ import About from './components/About/About.jsx'
 import Detail from './components/Detail/Detail';
 import { useLocation } from 'react-router-dom';
 import Form from './components/Form/Forms.jsx';
-import video from './components/img_vid/rym.mp4'
-// import { VideoBackground, Video } from './styled.components';
+import { VideoBackground, Video } from './styled.components';
 
 
 
@@ -38,14 +37,14 @@ function App() {
    return (
       <div className='App'>
 
-         {/* <VideoBackground>
+         <VideoBackground>
             <Video autoPlay muted loop className="videorym">
-               <source src={video} type='video/mp4' >
+               <source src={Video} type='video/mp4' >
                   
                </source>
             </Video>
 
-         </VideoBackground> */}
+         </VideoBackground> 
 
 
 

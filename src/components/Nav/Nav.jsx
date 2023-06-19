@@ -5,7 +5,7 @@ import style from "./Nav.module.css";
 
 export default function NavBar({ onSearch, logout }) {
   return (
-    <div className="nav">
+    <div className={style.nav}>
       <SearchBar onSearch={onSearch} />
       <button onClick={logout} className={style.btn_about}>
         LogOut

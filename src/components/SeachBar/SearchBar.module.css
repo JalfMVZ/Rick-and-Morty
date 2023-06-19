@@ -1,8 +1,45 @@
-.bar_container{
-   padding: 10px;
+
+
+.bar_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
+.bar_search {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: width 0.2s, transform 0.2s;
+  width: 150px;
+}
 
-.bar_search{
-   border-radius: 10%;
+.bar_search:hover {
+  width: 200px;
+}
+
+.bar_search:focus {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+}
+
+.fa-icon {
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.fa-icon:hover {
+  color: #888;
+  transform: scale(1.2);
+}
+
+.fa-icon:hover::before {
+  transform: scaleX(1.2);
 }
