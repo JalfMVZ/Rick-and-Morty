@@ -1,7 +1,87 @@
 .App {
   text-align: center;
+  background: rgb(168, 230, 206);
+  background: linear-gradient(
+    0deg,
+    rgba(168, 230, 206, 1) 27%,
+    rgba(220, 237, 194, 1) 74%
+  );
 }
 
+.cat-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+
+.cat-icon {
+  transition: transform 0.3s ease-in-out;
+  height: 250px;
+  width: 50px;
+  color: black;
+}
+
+.cat-icon:hover {
+  transform: translateX(10px);
+}
+
+.dog-container{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+
+
+.dog-icon{
+  transition: transform 0.3s ease-in-out;
+  height: 250px;
+  width: 50px;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Resto de tus estilos CSS... */
+
+
+
+
+/* 
 .video-container{
   position: fixed;
   top: 0;
@@ -20,9 +100,7 @@
   height: 100%;
   object-fit: cover;
 
-}
-
-
+} */
 
 .App-logo {
   height: 40vmin;

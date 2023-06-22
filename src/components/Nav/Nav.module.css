@@ -3,7 +3,7 @@
     justify-content: flex-end;
     align-items: center;
     padding: 1rem;
-    background-color: #f6e8ea;
+    background-color:#fcf7d7;
   }
   
   .nav button {
@@ -25,9 +25,13 @@
   
   .nav a {
     text-decoration: none;
+    
   }
   
+
+
   .nav a:hover {
     text-decoration: underline;
+    
   }
   

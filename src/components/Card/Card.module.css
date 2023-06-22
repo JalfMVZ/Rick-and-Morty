@@ -4,17 +4,19 @@
   align-items: center;
   width: 300px;
   height: 450px;
-  background-color: #2e382e; 
+  background-color: #18153f;
   border-radius: 1.5rem;
   transition: 0.5s;
   font-family: Georgia, "Times New Roman", Times, serif;
   gap: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Se agrega posición relativa para que los elementos internos se posicionen correctamente */
+  overflow: hidden; /* Se agrega overflow hidden para ocultar el botón de favorito cuando no está activo */
 }
 
 .card_container:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav_color {
@@ -27,16 +29,16 @@
   padding: 0.5rem;
   margin: 8px;
   transition: 0.3s;
-  color: #ff4d4d; 
-  background-color: transparent; 
-  border: none; 
+  color: #ff4d4d;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 
 .btn_plus {
   position: relative;
-  width: 30px; 
-  height: 30px; 
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius: 50%;
   background-color: rgba(164, 233, 11, 0.7);
@@ -73,7 +75,7 @@
 
 .detail_container {
   font-size: 13px;
-  color: #FFFF; 
+  color: #ffff;
   text-align: center;
 }
 
@@ -81,5 +83,21 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  object-fit: cover; 
+  object-fit: cover;
 }
+
+.fav_container {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 1; 
+}
+
+.fav_plus {
+  color: #ffffff; 
+  font-size: 30px; 
+}
+
+
+

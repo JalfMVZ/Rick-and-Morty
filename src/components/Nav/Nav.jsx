@@ -16,6 +16,9 @@ export default function NavBar({ onSearch, logout }) {
       <Link to="/home">
         <button className={style.btn_home}>Home</button>
       </Link>
+      <Link to="/favorites">
+        <button className={style.btn_favorites}>Favorites</button>
+      </Link>
     </div>
   );
 }
