@@ -3,13 +3,17 @@ import SearchBar from "../SeachBar/SearchBar";
 import { Link } from "react-router-dom";
 import style from "./Nav.module.css";
 
+
 export default function NavBar({ onSearch, logout }) {
   return (
     <div className={style.nav}>
       <SearchBar onSearch={onSearch} />
+      <Link to="/Forms">
       <button onClick={logout} className={style.btn_about}>
         LogOut
       </button>
+      </Link>
+
       <Link to="/about">
         <button className={style.btn_about}>About</button>
       </Link>
