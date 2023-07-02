@@ -8,6 +8,8 @@ export default function NavBar({ onSearch, logout }) {
   return (
     <div className={style.nav}>
       <SearchBar onSearch={onSearch} />
+     
+     
       <Link to="/Forms">
       <button onClick={logout} className={style.btn_about}>
         LogOut
