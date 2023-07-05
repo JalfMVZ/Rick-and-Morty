@@ -4,7 +4,6 @@ import { addFav, removeFav } from "../Redux/actions";
 import style from "./Card.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"; 
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 
@@ -68,7 +67,7 @@ function Card(props) {
 
       <div className={style.btn_plus_container}>
         <Link to={`/detail/${id}`} className={style.nav_color}>
-          <button  className={style.btn_plus}>+</button>
+          <button className={style.btn_plus}>+</button>
         </Link>
       </div>
 
